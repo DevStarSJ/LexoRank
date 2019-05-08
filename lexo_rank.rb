@@ -1,19 +1,17 @@
 class LexoRank
-  @@min_char = '0'
-  @@max_char = 'z'
+  MIN_CHAR = '0'.freeze
+  MAX_CHAR = 'z'.freeze
 
   def self.get_rank(prev='', after='')
-    prev = @@min_char if prev == ''
-    after = @@max_char if after == ''
+    prev = MIN_CHAR if prev == ''
+    after = MAX_CHAR if after == ''
 
     rank = ''
     i = 0
 
     while true
-      prev_char = get_char(prev, i, @@min_char)
-      after_char = get_char(after, i, @@max_char)
-
-      # binding.pry
+      prev_char = get_char(prev, i, MIN_CHAR)
+      after_char = get_char(after, i, MAX_CHAR)
 
       if prev_char == after_char
         rank += prev_char
